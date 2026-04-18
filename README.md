@@ -1,29 +1,61 @@
-# Sistema de Controle de Quadra (POO)
+# Sistema de Controle de Aluguel de Quadra (MVC)
 
-## Tabelas
+## Descrição
+Sistema desenvolvido utilizando o padrão arquitetural MVC (Model-View-Controller) para controle de aluguel de quadra esportiva.
+
+## Tabelas (Entidades)
 
 ### Cliente
-- id
 - nome
 - telefone
 
 ### Horario
-- id
 - hora
 - valor
 - disponivel
 
 ### Aluguel
-- id
 - cliente
 - lista de horarios
 - valor total
 - data
 
-## Regras
+## Regras de Negócio
 
-- Não permitir cliente com nome vazio
-- Não permitir horário com valor negativo
+- Não permitir cadastrar cliente com nome vazio
+- Não permitir cadastrar horário com valor negativo
 - Não permitir reservar horário já ocupado
-- Calcular valor total automaticamente
-- Permitir consulta de aluguéis por dia
+- Calcular automaticamente o valor total do aluguel
+- Permitir múltiplos horários no mesmo aluguel
+- Permitir consulta de aluguéis por data
+
+## Arquitetura MVC
+
+### Model
+Responsável pelos dados e regras de negócio:
+- Cliente
+- Horario
+- Aluguel
+
+### Controller
+Responsável por controlar o fluxo da aplicação:
+- AluguelController
+
+Funções:
+- Adicionar aluguel
+- Buscar aluguéis por data
+
+### View
+Responsável pela exibição das informações:
+- AluguelView
+
+## Funcionamento
+
+O sistema separa responsabilidades:
+- Model: lógica e dados
+- Controller: controle das ações
+- View: exibição
+
+## Execução
+
+Executar a classe Main para simular um aluguel utilizando o padrão MVC.
